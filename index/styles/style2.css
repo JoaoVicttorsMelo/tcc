@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+
+body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	min-height: 100vh;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: url("../img/pst_index/capa.jpg") center center/cover;
+
+}
+.fly-in-text {
+	list-style: none;
+	position: absolute;
+	left: 20%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.fly-in-text li{
+	
+display: inline-block;
+margin-right: 50px;
+font-family:  'Poppins', sans-serif;
+font-weight: 300;
+font-size: 4em;
+color: skyblue;
+opacity: 0.8;
+transition: all 4s ease;
+
+}
+
+input:focus, textarea:focus {
+    outline: none;
+}
+
+.fly-in-text li:last-child{
+	margin-right: 0;
+	
+}
+.fly-in-text.hidden li{
+	opacity: 0;
+}
+
+.fly-in-text.hidden li:nth-child(1){ transform: translateX(150px) translateY(-200px) ;}
+.fly-in-text.hidden li:nth-child(2){ transform: translateX(20px) translateY(100px);}
+.fly-in-text.hidden li:nth-child(3){ transform: translateX(-150px) translateY(-80px); }
+.fly-in-text.hidden li:nth-child(4){ transform: translateX(10px) translateY(-200px) ;}
+.fly-in-text.hidden li:nth-child(5){ transform: translateX(-300px) translateY(200px); }
+.fly-in-text.hidden li:nth-child(6){ transform: translateX(20px) translateY(-20px); }
+.fly-in-text.hidden li:nth-child(7){ transform: translateX(30px) translateY(200px); }
+
+
+.box
+{
+
+position: relative;
+width: 300px;
+height: 400px;
+display: flex;
+justify-content:center;
+background: #060c21; 
+left: 32%;
+top: -5vh;
+animation: animate 1s linear infinite;
+}
+
+@keyframes animate{
+	0%{
+		transform: rotate(0deg);
+		filter: hue-rotate(-10deg);
+	}
+	100%{
+		transform: rotate(0deg);
+		filter: hue-rotate(-90deg);
+		
+	}
+}
+.box:before{
+
+	content: "";
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	right: -1px;
+	bottom:-1px;
+	background: #fff;
+	z-index: -1;
+
+}
+
+.box:after{
+
+	content: "";
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	right: -1px;
+	bottom:-1px;
+	background: #fff;
+	z-index: -2;
+	filter: blur(40px);
+
+}
+.box:before,
+.box:after
+{
+background: linear-gradient(235deg,red,#060c21,yellow);
+}
+
+.content
+{
+padding: 20px;
+box-sizing: border-box;
+color: #fff;
+
+
+
+
+}
+
+.container
+{
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.container a{
+	position: relative;
+	width: 300px;
+	height: 75px;
+	left: 140%;
+	top: 40vh;
+	margin: 10px 0;
+	color:red;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	transition: 0.5s;
+}
+.container a:hover{
+	color: #000;
+}
+
+
+.container a:before{
+	
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0%;
+	height: 100%;
+	background: url(../img/pst_index/botao_azul.png);
+	background-size: cover;
+	transform-origin: left;
+	transition: 0.5s;
+}
+.container a:hover:before{
+	width: 100%;
+}
+
+.container a span{
+	position: relative;
+	z-index: 1;
+}
